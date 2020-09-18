@@ -1,0 +1,33 @@
+@import '../../flex';
+
+.block__slider {
+    position: absolute;
+    bottom: 20px;
+    height: 6px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    @include flex(row, center, center);
+
+    &__item {
+        background: var(--stroke-color);
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all .2s ease;
+
+        &.active {
+            background: var(--main-brand-color);
+        }
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --bg-color: #ECECEC;
+  --bg-color-white: #F5F5F5;
+  --tab-color: #FFFFFF;
+  --stroke-color: #DDDDDD;
+  --font-color-grey: #959595;
+  --font-color-black: #1D1C1D;
+  --font-color-white: #FFFFFF;
+  --block-color: #f8f8f8;
+  --icon-color: #616061;
+  --hover-color: #dfdfdf;
+  --main-brand-color: #FF4C00;
+  --notif-color: #FF0F00;
+  --light-brand-color: #FFEEE6;
+  --success-light-color: rgba(39, 174, 96, 0.1);
+  --success-color: #27AE60;
+  --task-color: #2F80ED;
+  --task-light-color: rgba(45, 156, 219, 0.1);
+  --company-event-color: #FEF9EC;
+  --company-text-color: rgba(242, 201, 76, 0.2);
+  --emoji-selected: rgba(255, 76, 0, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: var(--bg-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-app {
+  width: 100% !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-app__content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }

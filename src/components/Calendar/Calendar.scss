@@ -1,0 +1,73 @@
+@import '../../flex';
+
+.calendar__item {
+    font-weight: normal;
+    margin-top: -10px;
+
+    @include flex(column, flex-start, center);
+
+    &__cover {
+        width: 64px;
+        height: 55px;
+        background: url('../../img/birthday.png');
+        background-position: center;
+        margin: -15px auto 0;
+
+        @include flex(column, center, center);
+    }
+
+    & > span, & > p {
+        width: 100%;
+    }
+
+    & > span {
+        display: block;
+        font-size: 13px;
+        text-align: center;
+        color: var(--icon-color);
+        margin: 10px auto 5px;
+    }
+
+    & > p {
+        font-size: 14px;
+        text-align: center;
+        margin: 0;
+
+        & > span {
+            font-weight: bold;
+        }
+    }
+}
+
+.calendar__block {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--stroke-color);
+    font-weight: 500;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: -5px;
+    margin-left: -3.5px;
+
+    &__top {
+        background: #DE2F2F;
+        border-radius: 7px 7px 0px 0px;
+        width: inherit;
+        height: 15px;
+        font-size: 11px;
+        text-align: center;
+        color: var(--font-color-white);
+    }
+
+    &__bottom {
+        height: 25px;
+        background: var(--tab-color);
+
+        @include flex(column, center, center);
+
+        & > p {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+}

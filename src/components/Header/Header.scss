@@ -1,0 +1,110 @@
+@import '../../flex';
+
+.header {
+    height: 56px;
+    background: #fff;
+    grid-area: h;
+
+    &-shadow {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    @include flex(row, space-between, center);
+
+    &__logo {
+        height: inherit;
+        margin-left: 15%;
+        height: 24px;
+        width: 100px;
+        cursor: pointer;
+    }
+
+    &__notif {
+        height: inherit;
+        padding: 0 1.2em;
+        border-left: 1px solid var(--stroke-color);
+        border-right: 1px solid var(--stroke-color);
+
+        @include flex(row, flex-start, center);
+
+        &__block {
+            $blockColor: var(--block-color);
+
+            background: $blockColor;
+            height: 36px;
+            min-width: 172px;
+            border-radius: 6px;
+            border: 1px solid var(--stroke-color);
+
+            @include flex(row, flex-start, center);
+
+            & > svg {
+                margin: 0 0.5rem;
+            }
+
+            & > p {
+                font-size: 14px;
+                font-weight: bold;
+                color: var(--font-color-grey);
+            }
+
+            &:hover {
+                filter: opacity(-1);
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        height: inherit;
+        margin-right: 10%;
+    }
+
+    &__user {
+        padding: 0 1.2em;
+        height: inherit;
+
+        @include flex(row, flex-start, center);
+
+        &__info {
+            font-size: 14px;
+            line-height: 20px;
+            margin-right: 0.7rem;
+
+            & > p {
+                font-weight: bold;
+                color: var(--font-color-black);
+                margin: 0;
+            }
+
+            & > span {
+                display: block;
+                text-align: right;
+                color: var(--font-color-grey);
+            }
+        }
+
+        &__img {
+            margin-right: 0.7rem;
+        }
+
+        &__arrow {
+            width: 24px;
+            height: 24px;
+
+            @include flex(column, center, center);
+        }
+    }
+}
+
+@media (max-width: 1450px) and (min-width: 1200px) {
+    .header {
+        &__logo {
+            margin-left: 5%;
+        }
+
+        &__right {
+            margin-right: 2.5%;
+        }
+    }
+}

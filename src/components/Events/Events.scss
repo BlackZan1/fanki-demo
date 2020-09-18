@@ -1,0 +1,181 @@
+@import '../../flex';
+
+@mixin fixedTitle {
+    position: absolute;
+    width: 82px;
+    height: 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 12px;
+    background: var(--tab-color);
+    top: -12px;
+    left: 20px;
+
+    @include flex(row, center, center);
+
+    & > p {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--main-brand-color);
+    }
+}
+
+.events__new {
+    width: 100%;
+    margin: 20px auto 0;
+    border-top: 1px solid var(--main-brand-color);
+    position: relative;
+
+    &__item {
+        width: 100%;
+        padding: 20px 0;
+        background: var(--block-color);
+        border-top: 1px solid var(--stroke-color);
+
+        @include flex(row, flex-start, flex-start);
+
+        &__img {
+            margin: 0 10px 0 20px;
+        }
+
+        p {
+            color: var(--font-color-black);
+        }
+
+        &__info {
+            & > p {
+                font-size: 14px;
+                padding: 10px;
+                border-radius: 6px;
+                margin: 6px 20px 0 0;
+            }
+
+            & > div > p {
+                font-weight: 900;
+                font-size: 14px;
+                margin: 0 7px 0 0;
+            }
+
+            & > div {
+                @include flex(row, flex-start, center);
+            }
+
+            & > div > span {
+                font-size: 14px;
+                color: var(--font-color-grey);
+            }
+        }
+
+        &.marked {
+            background: var(--company-event-color);
+            border-top: none;
+
+            .events__new__item__info {
+                & > p {
+                    background: var(--company-text-color);
+                }
+            }
+        }
+    }
+
+    &__title {
+        @include fixedTitle();
+
+        border: 1px solid var(--main-brand-color);
+    }
+}
+
+.events__list {
+    border-top: 1px solid var(--stroke-color);
+    position: relative;
+
+    &__title {
+        @include fixedTitle();
+
+        border: 1px solid var(--stroke-color);
+    }
+
+    &__item {
+        margin: 20px;
+
+        &__thumb > img {
+            width: 100%;
+        }
+
+        &__info {
+            margin-left: 12px;
+
+            & > span {
+                display: block;
+                font-weight: normal;
+                font-size: 13px;
+                color: var(--font-color-grey);
+                margin: 5px 0 0;
+            }
+
+            & > p {
+                margin: 5px 0;
+                font-weight: 800;
+                font-size: 16px;
+                color: var(--font-color-black);
+                line-height: 125%;
+            }
+        }
+
+        &__bottom {
+            @include flex(row, space-between, center);
+
+            &__btn {
+                // width: 50px;
+                height: 24px;
+                background: var(--block-color);
+                border-radius: 50px;
+                border: 1px solid var(--stroke-color);
+                margin-left: 10px;
+                cursor: pointer;
+                transition: all .2s ease;
+                padding: 0 10px;
+
+                @include flex(row, center, center);
+
+                svg {
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 10px;
+                }
+
+                &.selected {
+                    border: 1px solid var(--main-brand-color);
+                    background: var(--emoji-selected);
+                }
+
+                &:hover {
+                    opacity: 0.85;
+                }
+
+                & > img {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                & > span {
+                    font-size: 12px;
+                    color: var(--icon-color);
+                }
+            }
+
+            &__emojies {
+                @include flex(row, flex-start, center);
+
+                & > div {
+                    width: 50px;
+                    padding: 0;
+
+                    & > span {
+                        margin-left: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

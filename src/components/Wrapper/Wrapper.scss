@@ -1,0 +1,25 @@
+@import '../../flex';
+
+.wrapper {
+    width: 85%;
+    margin-top: 1.5rem;
+
+    &__blocks {
+        margin: 20px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            'req cal bas'
+            'eve eve not'
+            'eve eve not'
+        ;
+        gap: 20px;
+        width: inherit;
+    }
+}
+
+@media (max-width: 1450px) and (min-width: 1200px) {
+    .wrapper {
+        width: 95%;
+    }
+}

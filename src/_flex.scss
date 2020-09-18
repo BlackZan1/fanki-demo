@@ -1,0 +1,8 @@
+@mixin flex($fd, $jc, $at) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $at;
+
+    @content;
+}

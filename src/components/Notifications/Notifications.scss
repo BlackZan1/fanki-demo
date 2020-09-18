@@ -1,0 +1,59 @@
+@import '../../flex';
+
+.notif__item {
+    padding-bottom: 24px;
+    margin: 20px 0 20px 20px; 
+    width: 80%;
+    font-size: 14px;
+
+    @include flex(row, flex-start, flex-start);
+
+    &__img {
+        margin-right: 10px;
+    }
+
+    &__info {
+        p {
+            font-weight: 500;
+            color: var(--font-color-black);
+            margin: 10px 0 0 0;
+            line-height: 17px;
+        }
+
+        & > span {
+            font-size: 10px;
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 3px 10px;
+            text-align: center;
+            background: var(--task-light-color);
+            color: var(--task-color);
+            text-transform: uppercase;
+        }
+
+        & > div {
+            display: flex;
+
+            & > p {
+                font-weight: 800;
+                margin-right: 10px;
+                margin: 0 10px 2px 0;
+            }
+
+            & > span {
+                color: var(--icon-color);
+                font-weight: normal;
+            }
+        }
+    }
+
+    &:not(:last-child) {
+        border-bottom: 1px solid var(--stroke-color);
+    }
+}
+
+@media (max-width: 1450px) and (min-width: 1200px) {
+    .notif__item {
+        font-size: 12.5px;
+    }
+}

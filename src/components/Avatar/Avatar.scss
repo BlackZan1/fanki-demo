@@ -1,0 +1,13 @@
+@import '../../flex';
+
+.avatar {
+    @include flex(column, center, center);
+
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f5f5f5;
+
+    &__img {
+        width: 72.5%;
+    }
+}
